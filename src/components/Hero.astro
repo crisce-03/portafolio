@@ -1,0 +1,69 @@
+---
+const personalImageAlt = "Cristopher Cerritos";
+import Badge from "../components/Badge.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import InstagramIcon from "../components/icons/Instagram.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SparklesIcon from "../components/icons/Sparkles.astro";
+import SocialPill from "../components/SocialPill.astro";
+---
+
+<div
+  class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 max-w-6xl mx-auto px-6 py-20"
+>
+  <div class="flex-1 text-center lg:text-left">
+    <h1
+      class="anim-fade-in anim-delay-1 text-4xl lg:text-6xl font-bold tracking-tight text-gray-800 dark:text-white"
+    >
+      Hi, I am
+      <span class="gradient-name"> Cristopher Cerritos</span>
+    </h1>
+
+    <p
+      class="anim-fade-in anim-delay-2 mt-6 text-lg lg:text-xl text-gray-800 dark:text-gray-300"
+    >
+      I am a Software Development Engineering student at the Catholic University
+      of El Salvador (UNICAES) with a strong interest in Full Stack Development,
+      software architecture, and database design.
+    </p>
+
+    <nav
+      class="anim-fade-in anim-delay-3 flex flex-wrap justify-center items-center lg:justify-start gap-4 mt-8"
+    >
+     <a
+        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        href="#"
+      >
+        <InstagramIcon class="size-8" />
+      </a>
+       <a
+        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        href="#"
+      >
+        <LinkedInIcon class="size-7" />
+      </a>
+       <a
+        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        href="#"
+      >
+        <GitHubIcon class="size-7" />
+      </a>
+      <a
+        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        href="#"
+      >
+        <MailIcon class="size-8" />
+      </a>
+    </nav>
+  </div>
+
+  <!-- Imagen -->
+  <div class="flex-1 flex justify-center">
+    <img
+      class="w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl"
+      src="/devPhoto.jpeg"
+      alt={personalImageAlt}
+    />
+  </div>
+</div>
