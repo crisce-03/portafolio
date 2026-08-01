@@ -1,12 +1,9 @@
 ---
-// BentoGrid.astro
-
 import GitHubIcon from "../components/icons/GitHub.astro";
 import ExternalLink from "./icons/ExternalLink.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 
-// Diccionario de tecnologías disponibles
 const TAGS: Record<string, { name: string; class: string; icon: any }> = {
   NEXT: {
     name: "Next.js",
@@ -86,7 +83,7 @@ const proyectos = [
       <img
         src={p.logo}
         alt={`${p.titulo} logo`}
-        class="absolute inset-0 h-full w-full object-contain p-10 opacity-90 transition-opacity duration-300 group-hover:opacity-0"
+        class="absolute inset-0 h-full w-full object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-0"
       />
 
       <img

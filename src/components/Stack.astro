@@ -1,0 +1,66 @@
+---
+import TecnologiaCard from "./TecnologiaCard.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import TypeScript from "./icons/TypeScript.astro";
+import React from "./icons/React.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import Express from "./icons/Express.astro";
+import Java from "./icons/Java.astro";
+import CSharp from "./icons/CSharp.astro";
+import CPlus from "./icons/CPlus.astro";
+import SqlServer from "./icons/SqlServer.astro";
+import Postgress from "./icons/Postgress.astro";
+import Mysql from "./icons/Mysql.astro";
+import Go from "./icons/Go.astro";
+import Git from "./icons/Git.astro";
+import GitHub from "./icons/GitHub.astro";
+import Node from "./icons/Node.astro";
+import Postman from "./icons/Postman.astro";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="flex flex-col items-center justify-center mb-4">
+    <span class="text-2xl font-bold mb-8">Frontend</span>
+    <div class="grid grid-cols-4 gap-4">
+      <TecnologiaCard name="HTML" icon={Html} />
+      <TecnologiaCard name="CSS" icon={Css} />
+      <TecnologiaCard name="Tailwind CSS" icon={Tailwind} />
+      <TecnologiaCard name="JavaScript" icon={JavaScript} />
+      <TecnologiaCard name="TypeScript" icon={TypeScript} />
+
+      <TecnologiaCard name="React" icon={React} />
+      <TecnologiaCard name="Next.js" icon={NextJS} />
+
+      <TecnologiaCard name="Astro" icon={AstroIcon} />
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center mb-4">
+    <span class="text-2xl font-bold mb-8">Backend</span>
+    <div class="grid grid-cols-4 gap-4">
+      <TecnologiaCard name="C#" icon={CSharp} />
+      <TecnologiaCard name="C++" icon={CPlus} />
+      <TecnologiaCard name="Java" icon={Java} />
+      <TecnologiaCard name="SQL Server" icon={SqlServer} />
+      <TecnologiaCard name="PostgreSQL" icon={Postgress} />
+      <TecnologiaCard name="MySQL" icon={Mysql} />
+    </div>
+  </div><div class="flex flex-col items-center justify-center mb-4">
+    <span class="text-2xl font-bold mb-8">Aprendiendo</span>
+    <div class="grid grid-cols-4 gap-4">
+      <TecnologiaCard name="Go" icon={Go} />
+      <TecnologiaCard name="Express" icon={Express} />
+      <TecnologiaCard name="Node.js" icon={Node} />
+    </div>
+  </div><div class="flex flex-col items-center justify-center mb-4">
+    <span class="text-2xl font-bold mb-8">Herramientas</span>
+    <div class="grid grid-cols-4 gap-4">
+      <TecnologiaCard name="Git" icon={Git} />
+      <TecnologiaCard name="GitHub" icon={GitHub} />
+      <TecnologiaCard name="Postman" icon={Postman} />
+    </div>
+  </div>
+</div>

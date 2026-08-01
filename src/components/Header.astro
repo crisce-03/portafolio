@@ -1,113 +1,66 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
 
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:miduga@gmail.com",
-  },
-]
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4"
+  id="smart-navbar"
+  class="fixed top-0 z-50 w-full pt-4 sm:pt-8 transition-transform duration-300"
 >
+  <!-- Agregamos w-full, px-2, gap-3 y text-[12px] para móvil, y restauramos con sm: para escritorio -->
   <nav
-    class="header-nav bg-white/60 dark:bg-gray-900/80 flex gap-x-1 px-4 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center border border-transparent"
+    class="mx-auto flex w-full sm:w-max items-center justify-center gap-3 sm:gap-8 px-2 sm:px-0 text-[12px] sm:text-sm font-semibold tracking-wide"
   >
-    {
-      navItems.map((link) => (
-        <a
-          class="nav-link relative text-xs sm:text-sm block px-1.5 sm:px-3 py-2 sm:py-1.5 rounded-full transition-colors duration-200 hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <div class="ml-2 pl-2 border-l border-gray-300/30 dark:border-white/10">
-      <ThemeToggle />
-    </div>
+    <a
+      href="#proyectos"
+      class="transition-all hover:-translate-y-1 hover:text-rose-700 dark:hover:text-rose-500"
+      >Proyectos</a
+    >
+
+    <!-- whitespace-nowrap evita que "Sobre Mí" se parta en dos líneas en teléfonos muy pequeños -->
+    <a
+      href="#sobre-mi"
+      class="whitespace-nowrap transition-all hover:-translate-y-1 hover:text-rose-700 dark:hover:text-rose-500"
+      >Sobre Mí</a
+    >
+
+    <a
+      href="#stack"
+      class="transition-all hover:-translate-y-1 hover:text-rose-700 dark:hover:text-rose-500"
+      >Stack</a
+    >
+
+    <a
+      href="mailto:cristophercerritos0@gmail.com"
+      class="transition-all hover:-translate-y-1 hover:text-rose-700 dark:hover:text-rose-500"
+      >Contacto</a
+    >
+
   </nav>
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+  // Guardamos la última posición del scroll
+  let lastScrollY = window.scrollY;
+  // Seleccionamos el header por su ID
+  const navbar = document.getElementById("smart-navbar");
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500", "dark:text-yellow-400", "bg-yellow-400/10", "font-semibold")
-              item.classList.remove("text-gray-600", "dark:text-gray-300")
-            } else {
-              item.classList.remove("text-yellow-500", "dark:text-yellow-400", "bg-yellow-400/10", "font-semibold")
-              item.classList.add("text-gray-600", "dark:text-gray-300")
-            }
-          })
-        }
-      })
+  window.addEventListener("scroll", () => {
+    // Verificamos que el navbar exista para evitar errores
+    if (!navbar) return;
+
+    // Posición actual del scroll
+    const currentScrollY = window.scrollY;
+
+    // Si bajamos (currentScrollY > lastScrollY) y hemos bajado más de 50px
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Escondemos el navbar moviéndolo hacia arriba fuera de la pantalla
+      navbar.classList.add("-translate-y-full");
+    } else {
+      // Si subimos, lo volvemos a mostrar quitando la clase
+      navbar.classList.remove("-translate-y-full");
     }
 
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
-
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
-    }
-  })
+    // Actualizamos la última posición
+    lastScrollY = currentScrollY;
+  });
 </script>
-
-<style>
-  .header-nav {
-    animation: nav-appear 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-
-@keyframes nav-appear {
-  0% {
-    box-shadow: none;
-    border-color: transparent;
-    backdrop-filter: blur(0);
-  }
-
-  100% {
-    box-shadow: 0 10px 15px rgb(0 0 0 / .15);
-    backdrop-filter: blur(12px);
-  }
-}
-</style>

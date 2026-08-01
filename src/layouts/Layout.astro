@@ -15,24 +15,23 @@ interface Props {
 const {
   description,
   title,
-  image = "/porfolio.webp",
+  image = "/devPhoto.jpeg",
   canonical = Astro.url.href,
 } = Astro.props;
 
-const siteUrl = "https://porfolio.dev";
+const siteUrl = "https://cristopher-cerritos.vercel.app";
 const ogImage = new URL(image, siteUrl).toString();
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Miguel Ángel Durán",
+  name: "Cristopher Cerritos",
   url: siteUrl,
   sameAs: [
-    "https://linkedin.com/in/midudev",
-    "https://github.com/midudev",
-    "https://twitter.com/midudev",
+    "https://linkedin.com/in/cristopher-cerritos",
+    "https://github.com/crisce-03",
   ],
-  jobTitle: "Ingeniero de Software y Creador de Contenido",
+  jobTitle: "Desarrollador Web Full Stack",
   worksFor: {
     "@type": "Organization",
     name: "Freelance",
@@ -46,13 +45,11 @@ const jsonLd = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="author" content="Miguel Ángel Durán" />
+    <meta name="author" content="Cristopher Cerritos" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Canonical -->
     <link rel="canonical" href={canonical} />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
@@ -61,17 +58,8 @@ const jsonLd = {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="midudev · Porfolio" />
+    <meta property="og:site_name" content="Cristopher Cerritos · Portfolio" />
 
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@midudev" />
-    <meta name="twitter:creator" content="@midudev" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-
-    <!-- JSON-LD structured data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -86,7 +74,7 @@ const jsonLd = {
     >
     </div>
 
-    <!-- Grain texture overlay for tactile depth -->
+
     <div
       class="pointer-events-none fixed inset-0 z-[-1] opacity-[0.035] dark:opacity-[0.05]"
       style="background-image: url('/noise.svg'); background-size: 200px 200px;"
@@ -166,7 +154,6 @@ const jsonLd = {
         }
       }
 
-      /* ── Design system: staggered entrance animations ─────────────── */
       @keyframes fade-in-up {
         from {
           opacity: 0;
@@ -194,16 +181,7 @@ const jsonLd = {
         animation-delay: 540ms;
       }
 
-      /* Gradient text utility for the hero name */
-      .gradient-name {
-        background: linear-gradient(135deg, #e11d48 10%, #881337 90%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-      }
 
-      /* Scroll-triggered reveal for named sections (below the fold) */
       @supports (animation-timeline: view()) {
         [data-section] {
           animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
