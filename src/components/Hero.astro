@@ -1,5 +1,4 @@
 ---
-const personalImageAlt = "Cristopher Cerritos";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import InstagramIcon from "../components/icons/Instagram.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
@@ -29,7 +28,7 @@ import MailIcon from "../components/icons/Mail.astro";
       
         Soy Desarrollador Web. Más que escribir código,
         me enfoco en diseñar soluciones eficientes aplicando las
-        mejores arquitecturas de software y patrones de diseño, simpre profundizando en nuevas tecnologías.
+        mejores arquitecturas de software y patrones de diseño, siempre profundizando en nuevas tecnologías.
       
       
     </p>
@@ -38,26 +37,36 @@ import MailIcon from "../components/icons/Mail.astro";
       class="anim-fade-in anim-delay-3 flex flex-wrap justify-center items-center lg:justify-start gap-4 mt-8"
     >
       <a
-        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        class="text-neutral-400 hover:text-rose-500 transition-all hover:scale-125"
         href="https://www.instagram.com/crisce_03/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram de Cristopher Cerritos"
       >
         <InstagramIcon class="size-8" />
       </a>
       <a
-        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        class="text-neutral-400 hover:text-rose-500 transition-all hover:scale-125"
         href="https://www.linkedin.com/in/cristopher-cerritos-a47a06355/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn de Cristopher Cerritos"
       >
         <LinkedInIcon class="size-7" />
       </a>
       <a
-        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        class="text-neutral-400 hover:text-rose-500 transition-all hover:scale-125"
         href="https://github.com/crisce-03"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub de Cristopher Cerritos"
       >
         <GitHubIcon class="size-7" />
       </a>
       <a
-        class="text-on-tertiary-container hover:text-secondary transition-all hover:scale-125"
+        class="text-neutral-400 hover:text-rose-500 transition-all hover:scale-125"
         href="mailto:cristophercerritos0@gmail.com"
+        aria-label="Enviar correo a Cristopher Cerritos"
       >
         <MailIcon class="size-8" />
       </a>
@@ -83,7 +92,10 @@ import MailIcon from "../components/icons/Mail.astro";
     <img
       class="w-72 h-72 lg:w-96 lg:h-96 object-cover object-[center_25%] rounded-full shadow-2xl"
       src="/yo2.jpg"
-      alt={personalImageAlt}
+      alt="Cristopher Cerritos"
+      width={384}
+      height={384}
+      loading="eager"
     />
   </div>
   

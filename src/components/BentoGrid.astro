@@ -4,6 +4,9 @@ import ExternalLink from "./icons/ExternalLink.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import React from "./icons/React.astro";
+import CSharp from "./icons/CSharp.astro";
+import Java from "./icons/Java.astro";
 
 const TAGS: Record<string, { name: string; class: string; icon: any }> = {
   NEXT: {
@@ -21,12 +24,37 @@ const TAGS: Record<string, { name: string; class: string; icon: any }> = {
     class: "bg-[#28203e] text-white",
     icon: AstroIcon,
   },
+  REACT: {
+    name: "React",
+    class: "bg-[#23272f] text-white",
+    icon: React,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "bg-[#280068] text-white",
+    icon: CSharp,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-[#1c2834] text-white",
+    icon: Java,
+  },
 };
 
 const proyectos = [
   {
+    titulo: "FacturitoSV",
+    desc: "Facturación electrónica para PYME's en El Salvador",
+    size: "col-span-1 lg:col-span-6 row-span-1 lg:row-span-2", 
+    logo: "/facturitoSV.jpg",
+    screenshot: "/facturitoSV.jpg",
+    github: "https://github.com/facturito-SV",
+    demo: "https://facturitosv.lat",
+    tags: [TAGS.REACT,TAGS.CSHARP],
+  },
+  {
     titulo: "Michells Beauty Salon",
-    desc: "Sitio web de una salon de belleza",
+    desc: "Sitio web de un salón de belleza",
     size: "col-span-1 lg:col-span-3 row-span-1 lg:row-span-2", 
     logo: "/michells.jpg",
     screenshot: "/mcihells2.png",
@@ -42,7 +70,7 @@ const proyectos = [
     screenshot: "/sigvetLogo.png",
     github: "https://github.com/crisce-03/SIGVET",
     demo: "https://github.com/crisce-03/SIGVET",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.JAVA],
   }
 ];
 ---
